@@ -2,7 +2,7 @@ require 'sinatra'
 require 'json'
 
 set :bind, '127.0.0.1'
-set :port, 6000
+set :port, 31415
 set :views, settings.root + '/html'
 
 require 'data_mapper'
@@ -14,7 +14,7 @@ class Town
 
   property :id, Serial
   property :name, Text, required: true
-  property :desciption, Text, required: true
+  property :description, Text, required: true
 
   has n, :amenities, :constraint => :destroy
 end
