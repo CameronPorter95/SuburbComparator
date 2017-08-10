@@ -54,3 +54,18 @@ post('/towns') do
   new_town.save
   redirect('/')
 end
+
+# render the town of concern to the browser
+get('/towns/:id/edit') do
+  town = Town.get(params[:id])
+  erb(:edit_town, locals: { town: town })
+end
+
+# edit a town
+put('/towns/:id') do
+  town = Town.get(params[:id])
+  town.name = params[:name]
+  town.description = params[:description]
+  town.save
+  redirect('/')
+end

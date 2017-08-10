@@ -13,6 +13,8 @@
       <div class='town-display-tile'>
         <p> Town id: <%= town.id %> '<%= town.name %>' '<%= town.description %>' </p>
         <p>has <%= town.amenities.count %> amenities(s).</p>
+        <%# a link that routes to an edit restaurant form %>
+        <a href='/towns/<%= town.id %>/edit'>edit town</a>
       </div>
     <% end %>
     <h4><a href='/towns/create'>Create a New Town</a></h4>
