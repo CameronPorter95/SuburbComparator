@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>Town-Comparison</title>
+    <link rel='stylesheet' href='/css/spriggly_wiggly_style.css' type='text/css' ></link>
+  </head>
+  <body>
+    <h1>Town Comparator</h1>
+    <h1>Compare town amenities!</h1>
+    <h3>look at these towns</h3>
+
+    <%# all restaurants %>
+    <% towns.each do |town| %>
+      <div class='town-display-tile'>
+        <p> Town id: <%= town.id %> '<%= town.name %>' '<%= town.description %>' </p>
+        <p>has <%= town.amenities.count %> amenities(s).</p>
+      </div>
+    <% end %>
+    <h4><a href='/towns/create'>Create a New Town</a></h4>
+
+  </body>
+</html>
