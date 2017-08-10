@@ -69,3 +69,9 @@ put('/towns/:id') do
   town.save
   redirect('/')
 end
+
+# delete town
+delete('/towns/:id') do
+  Town.get(params[:id]).destroy
+  redirect('/')
+end

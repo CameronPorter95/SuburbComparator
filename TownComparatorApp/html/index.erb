@@ -11,6 +11,11 @@
     <%# for all towns%>
     <% towns.each do |town| %>
       <div class='town-display-tile'>
+        <%# a form that deletes an existing town%>
+        <form action='/towns/<%= town.id %>' method='POST' class='pull-right'>
+          <input type='hidden' name='_method' value='DELETE'/>
+          <button type='submit' class='super-sport'>X</button>
+        </form>
         <p> Town id: <%= town.id %> '<%= town.name %>' '<%= town.description %>' </p>
         <p>has <%= town.amenities.count %> amenities(s).</p>
         <%# a link that routes to an edit restaurant form %>
